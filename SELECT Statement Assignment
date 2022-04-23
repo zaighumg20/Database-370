@@ -1,0 +1,19 @@
+SELECT
+FROM books;
+2.
+SELECT fname |
+| ' ' |
+| lname
+ 
+FROM Author;
+3.
+SELECT unique category
+From books;
+4.
+SELECT customer# ,lastname, firstname
+From customers;
+5. 
+SELECT lname |
+| ',' |
+| fname As "Author name"
+from author;
