@@ -1,0 +1,35 @@
+Author : Talha Gill
+
+SELECT title, fname, lname
+FROM books b, bookauthor a, author i
+WHERE b.isbn =a.isbn
+AND a.authorid = i.authorid;
+
+2.
+ SELECT order#,firstname, lastname
+FROM customers Join orders USING(customer#)
+JOIN orderitems USING(order#)
+JOIN Books USING(Isbn)
+WHERE Category='COMPUTER'
+
+3.
+SELECT title, ISBN, Order#, orderDate
+FROM books LEFT OUTER JOIN orderitems USING(isbn)
+LEFT OUTER JOIN ORDERS USING(order#) 
+LEFT OUTER JOIN customers c USING (customer#)
+ORDER BY TITLE ASC;
+
+4. 
+SELECT gift
+FROM books , promotion
+WHERE books.cost< promotion.maxretail
+AND books.cost> promotion.minretail
+AND books.title= 'DATABASE IMPLEMENTATION';
+
+5.
+SELECT title, paideach-cost AS profit
+FROM books NATURAL JOIN orderitems
+NATURAL JOIN orders
+NATURAL JOIN customers
+WHERE firstname = 'BONITA' AND lastname = 'MORALES' ;
+ 
